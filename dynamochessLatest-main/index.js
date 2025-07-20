@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -67,22 +69,22 @@ const orderRoutes = require("./routes/orderRoute");
 const PlayersTournament = require("./models/Tournament/PlayersTournament");
 
 //user_routes
-app.use("/", user_routes);
-app.use("/", timeRoute);
-app.use("/", ruleRoute);
-app.use("/", bannerRoute);
-app.use("/", ratingRoute);
-app.use("/", trainerRoute);
-app.use("/", matchRoute);
-app.use("/", postRoute);
-app.use("/", membershipRoute);
-app.use("/", tournamentRoute);
-app.use("/", Createchallenge);
-app.use("/", AnalysisRoute);
-app.use("/", walletRoute);
-app.use("/", productRoute);
-app.use("/", billingDetailsRoutes);
-app.use("/", orderRoutes);
+app.use("/api", user_routes);
+app.use("/api", timeRoute);
+app.use("/api", ruleRoute);
+app.use("/api", bannerRoute);
+app.use("/api", ratingRoute);
+app.use("/api", trainerRoute);
+app.use("/api", matchRoute);
+app.use("/api", postRoute);
+app.use("/api", membershipRoute);
+app.use("/api", tournamentRoute);
+app.use("/api", Createchallenge);
+app.use("/api", AnalysisRoute);
+app.use("/api", walletRoute);
+app.use("/api", productRoute);
+app.use("/api", billingDetailsRoutes);
+app.use("/api", orderRoutes);
 
 
 
