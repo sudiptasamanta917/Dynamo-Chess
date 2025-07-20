@@ -84,7 +84,7 @@ const Profile = () => {
     const handleSave = async () => {
         try {
             const response = await axios.post(
-                "https://chess.dynamochess.in/update-profile-user",
+                "https://chess.dynamo.gs3solution.us/update-profile-user",
                 {
                     mobile: editInfo.mobile,
                     name: editInfo.name,

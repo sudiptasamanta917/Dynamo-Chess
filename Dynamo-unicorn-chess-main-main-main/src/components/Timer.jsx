@@ -9,7 +9,7 @@ const Timer = ({ data }) => {
   const { data: serverTime, refetch } = useQuery(
     'datetimeQuery',
     async () => {
-      const response = await fetch('https://chess.dynamochess.in/getCurrentTime');
+      const response = await fetch('https://chess.dynamo.gs3solution.us/getCurrentTime');
       const { time } = await response.json();
       // console.log(time, "response.json()");
       return time; // assuming the response is in JSON format

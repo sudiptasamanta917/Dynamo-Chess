@@ -41,7 +41,7 @@ const getCurrentDateTimeInIST = () => {
 //create unique urls
 const createUniqueUrls = (noOfPlayers, gameTime, tournamentId, roundId) => {
   const protocol = "https";
-  const host = "dynamochess.in";
+  const host = "dynamo.gs3solution.us";
   const urls = [];
 
   // Generate n/2 unique URLs
