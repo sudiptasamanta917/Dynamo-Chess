@@ -1,0 +1,30 @@
+
+.promotion-choices {
+    height: 13%;
+    z-index: 4;
+}
+
+.promotion-choices .piece {
+    width: 20%; 
+    height: 100%; 
+    border: 1px solid var(--dark-tile);
+}
+.promotion-choices .piece:hover {
+    box-shadow: 0 0 0 5px var(--dark-tile) inset;
+    transform: scale(1.05);
+}
+.promotion-choices :is(.wq,.bq) {
+    left: 0;
+}
+.promotion-choices :is(.wr,.br) {
+    left: 20%;
+}
+.promotion-choices :is(.wb,.bb) {
+    left: 40%;
+}
+.promotion-choices :is(.wn,.bn) {
+    left: 60%;
+}
+.promotion-choices :is(.wm,.bm) {
+    left: 80%;
+}

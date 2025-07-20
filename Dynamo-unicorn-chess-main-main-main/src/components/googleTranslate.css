@@ -1,0 +1,33 @@
+.skiptranslate .goog-te-gadget span:nth-of-type(2) {
+    display: none !important;
+}
+
+/* Hide the "Powered by" link */
+/* .skiptranslate .goog-te-gadget .VIpgJd-ZVi9od-l4eHX-hSRGPd {
+    display: none !important;
+} */
+
+/* Ensure the remaining elements are displayed correctly */
+/* .skiptranslate .goog-te-gadget {
+    font-size: 0 !important;
+} */
+
+/* Existing styles */
+.VIpgJd-ZVi9od-l4eHX-hSRGPd {
+    display: none;
+}
+.skiptranslate .goog-te-gadget div > span {
+    display: none !important;
+}
+
+.goog-te-combo{
+    padding: 2px;
+    border-radius: 5px;
+    width: 79%;
+   
+}
+.goog-te-gadget {
+    
+    color: #334155 !important;
+    margin-top: 20px;
+}

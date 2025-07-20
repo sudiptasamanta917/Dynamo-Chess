@@ -1,0 +1,17 @@
+.ranks-container {
+    position: absolute;
+    left: calc(-0.6 * var(--tile-size)); /* Adjust left position dynamically */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: calc(1.4 * var(--tile-size)) 0; /* Dynamically adjust padding */
+    font-size: calc(0.4 * var(--tile-size)); /* Dynamic font size */
+    font-weight: bold;
+  }
+  
+  .rank-text {
+    text-align: center;
+    line-height: calc(1 * var(--tile-size));
+  }
+  

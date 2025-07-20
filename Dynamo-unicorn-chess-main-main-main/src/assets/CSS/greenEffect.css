@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap");
+
+.green-text {
+  font-family: "Cinzel", serif;
+  background: linear-gradient(#207f16, #59ff00, #207f16);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}

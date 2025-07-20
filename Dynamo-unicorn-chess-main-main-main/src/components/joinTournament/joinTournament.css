@@ -1,0 +1,13 @@
+/* JoinTournament.css */
+.swal2-popup {
+    @apply bg-yellow-50 text-green-800; /* Light yellow background with green text */
+  }
+  
+  .swal2-confirm {
+    @apply bg-green-600 text-white; /* Green button with white text */
+  }
+  
+  .swal2-cancel {
+    @apply bg-yellow-200 text-green-600; /* Light yellow button with green text */
+  }
+  

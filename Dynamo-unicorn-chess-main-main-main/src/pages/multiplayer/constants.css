@@ -1,0 +1,29 @@
+:root {
+    --tile-size: 45px;
+    --light-tile: #DCDA5B;
+    --dark-tile: #18A445;
+    --bg-color: #202020;
+    --highlight: rgb(12, 243, 89);
+    --check: #ca3f27;
+}
+
+/* Small devices (phones, 450px and down) */
+@media (max-width: 450px) {
+    :root {
+        --tile-size: 25px;
+    }
+}
+
+/* Medium devices (tablets, 451px to 768px) */
+@media (min-width: 451px) and (max-width: 768px) {
+    :root {
+        --tile-size: 35px;
+    }
+}
+
+/* Large devices (desktops, 769px and up) */
+@media (min-width: 769px) {
+    :root {
+        --tile-size: 45px;
+    }
+}
