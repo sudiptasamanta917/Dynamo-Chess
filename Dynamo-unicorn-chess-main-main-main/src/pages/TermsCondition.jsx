@@ -40,7 +40,7 @@ function TermsCondition() {
 <p><strong>Third-party Social Media Service</strong> means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.</p>
 </li>
 <li>
-<p><strong>Website</strong> refers to dynamoChess, accessible from <a href="https://dynamo.gs3solution.us" rel="external nofollow noopener" target="_blank">https://dynamo.gs3solution.us</a></p>
+<p><strong>Website</strong> refers to dynamoChess, accessible from <a href="https://${VITE_URL}" rel="external nofollow noopener" target="_blank">https://${VITE_URL}</a></p>
 </li>
 <li>
 <p><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>
@@ -89,7 +89,7 @@ You agree that the original English text shall prevail in the case of a dispute.
 <h2>Contact Us</h2>
 <p>If you have any questions about these Terms and Conditions, You can contact us:</p>
 <ul>
-<li>By visiting this page on our website: <a href="https://dynamo.gs3solution.us/" rel="external nofollow noopener" target="_blank">https://dynamo.gs3solution.us/</a></li>
+<li>By visiting this page on our website: <a href="https://${VITE_URL}/" rel="external nofollow noopener" target="_blank">https://${VITE_URL}/</a></li>
 </ul>
     </div>
   )

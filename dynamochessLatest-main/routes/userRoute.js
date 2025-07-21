@@ -205,5 +205,7 @@ userRoute.post('/update-User-Coin-Or-Rating/:userId',async(req,res)=> updateUser
 userRoute.put("/updateAllUserLoggedIn",async(req,res)=>updateAllUsersIsLoggedIn(req,res))
 userRoute.put("/updateAlluserDeviceId",async(req,res)=>updateAlluserDeviceId(req,res))
 userRoute.get("/logout/:userId",user_auth,async(req,res)=>logout(req,res))
-userRoute.get("/userDeleteWhileLoggedIn/:userId",user_auth,async(req,res)=>userDeleteWhileLoggedIn(req,res))
+userRoute.get("/userDeleteWhileLoggedIn/:userId", user_auth, async (req, res) =>
+    deleteUser(req, res)
+);
 module.exports = userRoute;

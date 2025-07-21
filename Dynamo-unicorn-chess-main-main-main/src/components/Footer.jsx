@@ -318,7 +318,7 @@ function Footer() {
                     <span className="text-sm text-center text-gray-500 sm:text-center dark:text-gray-400">
                         © 2025{" "}
                         <a
-                            href="https://dynamo.gs3solution.us"
+                            href=""
                             className="hover:underline"
                         >
                             dynamochess

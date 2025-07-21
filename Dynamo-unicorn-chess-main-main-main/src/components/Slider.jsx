@@ -9,7 +9,7 @@ const Slider = (props) => {
   const { height, eventDetails, images: propImages } = props;
 
   // API URL for fetching banner data
-  const Url = `https://chess.dynamo.gs3solution.us/getBanner?type=Home upper banner`;
+  const Url = `${VITE_URL}/getBanner?type=Home upper banner`;
 
   // Fetching banner data using useQuery
   const queryBanner = useQuery(

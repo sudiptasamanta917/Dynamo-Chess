@@ -30,7 +30,7 @@ function RefundCancelation() {
 <p><strong>Service</strong> refers to the Application or the Website or both.</p>
 </li>
 <li>
-<p><strong>Website</strong> refers to dynamoChess, accessible from <a href="https://dynamo.gs3solution.us" rel="external nofollow noopener" target="_blank">https://dynamo.gs3solution.us</a></p>
+<p><strong>Website</strong> refers to dynamoChess, accessible from <a href="https://${VITE_URL}" rel="external nofollow noopener" target="_blank">https://${VITE_URL}</a></p>
 </li>
 <li>
 <p><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>
@@ -41,7 +41,7 @@ function RefundCancelation() {
 <p>The deadline for cancelling an Order is 7 days from the date on which You received the Goods or on which a third party you have appointed, who is not the carrier, takes possession of the product delivered.</p>
 <p>In order to exercise Your right of cancellation, You must inform Us of your decision by means of a clear statement. You can inform us of your decision by:</p>
 <ul>
-<li>By visiting this page on our website: <a href="https://dynamo.gs3solution.uscontact" rel="external nofollow noopener" target="_blank">https://dynamo.gs3solution.uscontact</a></li>
+<li>By visiting this page on our website: <a href="https://${VITE_URL}contact" rel="external nofollow noopener" target="_blank">https://${VITE_URL}contact</a></li>
 </ul>
 <p>We will reimburse You no later than 14 days from the day on which We receive the returned Goods. We will use the same means of payment as You used for the Order, and You will not incur any fees for such reimbursement.</p>
 <h2>Conditions for Returns</h2>
@@ -71,7 +71,7 @@ Kolkata-700101, West Bengal, India</p> */}
 <h3>Contact Us</h3>
 <p>If you have any questions about our Returns and Refunds Policy, please contact us:</p>
 <ul>
-<li>By visiting this page on our website: <a href="https://dynamo.gs3solution.us/contact" rel="external nofollow noopener" target="_blank">https://dynamo.gs3solution.us/contact</a></li>
+<li>By visiting this page on our website: <a href="https://${VITE_URL}/contact" rel="external nofollow noopener" target="_blank">https://${VITE_URL}/contact</a></li>
 </ul>
     </div>
   )

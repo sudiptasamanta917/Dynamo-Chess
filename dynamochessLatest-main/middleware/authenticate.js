@@ -13,7 +13,7 @@ passport.use(
         {
             clientID: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-            callbackURL: "https://dynamo.gs3solution.us/callback",
+            callbackURL: "https://${VITE_URL}/callback",
             scope: ["profile", "email"],
         },
         function (accessToken, refreshToken, profile, callback) {

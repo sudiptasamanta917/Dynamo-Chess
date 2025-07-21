@@ -451,7 +451,7 @@ const createOrderRZP = async (userId, items, billingDetailsId) => {
         productName: product.name,
         price: itemTotal,
         img: product.img
-          ? `https://dev.dynamo.gs3solution.us/public/${product.img}`
+          ? `https://dev.${VITE_URL}/public/${product.img}`
           : "https://via.placeholder.com/150",
       });
     }

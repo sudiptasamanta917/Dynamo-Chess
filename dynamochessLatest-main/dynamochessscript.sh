@@ -26,7 +26,7 @@ echo "Configuring NGINX..."
 sudo tee /etc/nginx/sites-available/default > /dev/null <<EOF
 server {
     listen 80;
-    server_name chess.dynamo.gs3solution.us;
+    server_name chess.${VITE_URL};
 
     location / {
         proxy_pass http://localhost:8080; # Change the port if your app runs on a different one
@@ -53,7 +53,7 @@ sudo apt-get install -y python3-certbot-nginx
 
 # Obtain SSL certificates
 echo "Obtaining SSL certificates..."
-sudo certbot --nginx -d chess.dynamo.gs3solution.us  --non-interactive --agree-tos --email md.imtiyazalam9876@gmail.com
+sudo certbot --nginx -d chess.${VITE_URL}  --non-interactive --agree-tos --email md.imtiyazalam9876@gmail.com
 
 # Set up Certbot auto-renewal
 echo "Setting up Certbot auto-renewal..."

@@ -403,7 +403,7 @@ const newPaymentInRazorpay = async (req, res) => {
   // console.log(userData);
   const { balance } = req.body;
   const image =
-    "https://dynamo.gs3solution.us/assets/logo-C1YdKwJs.png";
+    "https://${VITE_URL}/assets/logo-C1YdKwJs.png";
   const options = {
     amount: Number(balance * 100),
     currency: "INR",
