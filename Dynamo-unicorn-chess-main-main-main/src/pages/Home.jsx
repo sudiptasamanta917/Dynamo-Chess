@@ -25,6 +25,7 @@ import HomeRightBar from "../components/Home/HomeRightBar";
 import HomeMiddleBar from "../components/Home/HomeMiddleBar";
 import Pricing from "../components/Home/Pricing";
 import Sponsors from "../components/Home/Sponsors";
+import Puzzles from "../components/Home/Puzzles";
 import { getUserdata } from "../utils/getuserdata";
 import { useQuery } from "react-query";
 import { getApi, getApiWithToken } from "../utils/api";
@@ -88,6 +89,7 @@ function Home() {
                   <HomeLeftBar />
               </div>
           </div>
+          <Puzzles />
           <Testimonial />
           <Pricing />
           <Sponsors />

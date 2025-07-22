@@ -258,7 +258,7 @@ const Profile = () => {
                 >
                     <span className="absolute inset-y-0 w-full h-full bg-center bg-cover  opacity-60" />
                 </div>
-                <div className="relative flex flex-col flex-auto min-w-0 p-4 mx-6 -mt-16 overflow-hidden break-words shadow-xl rounded-md bg-gray-200 bg-clip-border backdrop-blur-2xl backdrop-saturate-200">
+                <div className="relative text-[#E3C78A] flex flex-col flex-auto min-w-0 p-4 mx-6 -mt-16 overflow-hidden break-words shadow-xl rounded-md bg-[#262522] bg-clip-border backdrop-blur-2xl backdrop-saturate-200">
                     <div className="flex flex-wrap -mx-3">
                         <div className="flex-none w-auto max-w-full px-3">
                             <div className="text-base ease-in-out h-18.5 w-18.5 relative inline-flex items-center justify-center rounded-md text-white transition-all duration-300">
@@ -287,13 +287,13 @@ const Profile = () => {
                                         <li className="z-30 flex flex-wrap gap-2">
                                             <button
                                                 onClick={Logout}
-                                                className="z-30 border border-black w-full bg-black px-2 py-1 mb-0 transition-all border-0 rounded-lg ease-in-out bg-inherit text-white focus:bg-white"
+                                                className="z-30 w-full hover:text-red-500 hover:bg-gray-600 font-bold bg-amber-950 px-2 py-1 mb-0 transition-all border-0 rounded-lg ease-in-out bg-inherit text-white focus:bg-white"
                                             >
                                                 Logout
                                             </button>
                                             <button
                                                 onClick={handleDelete}
-                                                className="z-30 border border-black w-full hover:text-red-500 bg-black px-2 py-1 mb-0 transition-all border-0 rounded-lg ease-in-out bg-inherit text-white focus:bg-red-800"
+                                                className="z-30 w-full hover:text-red-500 hover:bg-gray-600 font-bold bg-amber-950 px-2 py-1 mb-0 transition-all border-0 rounded-lg ease-in-out bg-inherit text-white focus:bg-red-800"
                                             >
                                                 Account Delete
                                             </button>
@@ -308,20 +308,20 @@ const Profile = () => {
                 <div className="flex flex-wrap ">
                     {/* card col-1 */}
                     <div className="w-full lg:w-1/2 max-w-full px-3 mt-6">
-                        <div className="relative flex flex-col h-full min-w-0 break-words bg-gray-200 border-0 shadow-xl rounded-md bg-clip-border">
+                        <div className="relative flex flex-col h-full min-w-0 break-words bg-[#262522] border-0 shadow-xl rounded-md bg-clip-border">
                             <div className="p-4 pb-0 mb-0 border-b-0 rounded-t-2xl">
                                 <div className="flex flex-wrap -mx-3">
                                     {/* Profile Information Title */}
                                     <div className="flex items-center w-full max-w-full px-3 shrink-0 md:w-8/12 md:flex-none">
-                                        <h6 className="mb-0 text-2xl">
+                                        <h6 className="mb-0 text-2xl font-semibold text-[#E3C78A]">
                                             Profile Information
                                         </h6>
                                     </div>
                                     {/* Buttons Section */}
-                                    <div className="w-full max-w-full px-3 text-right shrink-0 md:w-4/12 md:flex-none relative">
+                                    <div className="w-full   max-w-full px-3 text-right shrink-0 md:w-4/12 md:flex-none relative">
                                         {/* Edit Button */}
                                         <button
-                                            className="text-green-800 text-xl p-3"
+                                            className="text-[#E3C78A] font-semibold bg-[#4e342e] text-xl px-3 py-1 rounded"
                                             onClick={() =>
                                                 setShowEditModal(true)
                                             } // Open modal
@@ -381,35 +381,35 @@ const Profile = () => {
                                 </div>
                             </div>
                             <div className="flex-auto p-4">
-                                <p className="leading-normal text-base">
+                                <p className="leading-normal text-gray-300 text-base">
                                     {queryGetPROFILE?.data?.profileInf != ""
                                         ? queryGetPROFILE?.data?.profileInf
                                         : " Hi, I’m User, Decisions: If you can’t decide, the answer is no.If two equally difficult paths, choose the one more painful in the shortterm (pain avoidance is creating an illusion of equality)."}
                                 </p>
                                 <hr className="h-px my-6 bg-transparent bg-gradient-to-r from-transparent via-white to-transparent" />
-                                <ul className="flex flex-col pl-0 mb-0 rounded-lg">
+                                <ul className="flex flex-col pl-0 mb-0 rounded-lg text-[#E3C78A]">
                                     <li className="relative block px-4 py-2 pt-0 pl-0 leading-normal  border-0 rounded-t-lg text-base text-inherit">
-                                        <strong className="text-slate-700">
+                                        <strong className="text-slate-300">
                                             User Name:
                                         </strong>{" "}
                                         &nbsp;
                                         {queryGetPROFILE?.data?.name}
                                     </li>
                                     <li className="relative block px-4 py-2 pl-0 leading-normal  border-0 border-t-0 text-base text-inherit">
-                                        <strong className="text-slate-700">
+                                        <strong className="text-slate-300">
                                             Email:
                                         </strong>{" "}
                                         &nbsp;
                                         {queryGetPROFILE?.data?.email}
                                     </li>
                                     <li className="relative block px-4 py-2 pl-0 leading-normal  border-0 border-t-0 text-base text-inherit">
-                                        <strong className="text-slate-700">
+                                        <strong className="text-slate-300">
                                             Location:
                                         </strong>{" "}
                                         &nbsp; {queryGetPROFILE?.data?.country}
                                     </li>
                                     <li className="relative block px-4 py-2 pl-0 leading-normal border-0 border-t-0 text-base text-inherit">
-                                        <strong className="text-slate-700">
+                                        <strong className="text-slate-300">
                                             Rating:
                                         </strong>{" "}
                                         &nbsp;
@@ -424,12 +424,14 @@ const Profile = () => {
                     {/* card col-1 end */}
                     {/* card col-2 start */}
                     <div className="w-full max-w-full px-3 mt-6 max-md:mt-3 xl:w-1/2">
-                        <div className=" flex flex-col h-full min-w-0 break-words bg-gray-200 border-0 shadow-xl rounded-md bg-clip-border">
+                        <div className=" flex flex-col h-full min-w-0 break-words bg-[#262522] border-0 shadow-xl rounded-md bg-clip-border">
                             <div className="p-4 pb-0 mb-0 border-b-0 rounded-t-2xl">
-                                <h6 className="mb-0 text-xl ">Notification</h6>
+                                <h6 className="mb-0 text-2xl text-[#E3C78A] font-semibold">
+                                    Notification
+                                </h6>
                             </div>
                             <div className=" p-4 w-full">
-                                <ul className="overflow-y-auto  bg-white h-64  w-full pl-0  rounded-lg">
+                                <ul className="overflow-y-auto  bg-[#302e2b] h-64  w-full pl-0  rounded-lg">
                                     {notificationFunData?.map((item, index) => (
                                         <li
                                             key={index}
@@ -474,15 +476,17 @@ const Profile = () => {
                     {/* card col-2 end */}
                 </div>
             </div>
-            <div className="w-full max-w-full px-8 my-2 max-md:mt-3 mb-8">
-                <div className="flex flex-col h-full min-w-0 break-words bg-gray-200 border-0 shadow-xl rounded-md bg-clip-border">
+            <div className="w-full text-[#E3C78A] max-w-full px-8 my-2 max-md:mt-3 mb-8">
+                <div className="flex flex-col h-full min-w-0 break-words bg-[#262522] border-0 shadow-xl rounded-md bg-clip-border">
                     <div className="p-4 pb-0 mb-0 border-b-0 rounded-t-2xl">
-                        <h6 className="mb-0 text-xl">Tournaments</h6>
+                        <h6 className="mb-0 text-2xl text-center font-semibold">
+                            Tournaments
+                        </h6>
                     </div>
                     <div className="p-4 w-full">
-                        <div className="bg-white rounded-lg p-4 shadow-md my-4 ">
+                        <div className="bg-gray-200 rounded p-[1px] shadow-md my-4 ">
                             <table className="table-auto w-full ">
-                                <div className="bg-white text-gray-900 h-80 overflow-y-auto">
+                                <div className="bg-[#302e2b] text-gray-900 h-80 overflow-y-auto">
                                     <div className="space-y-4">
                                         {queryGetTournaments?.data?.data?.data.map(
                                             (tournament, index) => (
@@ -561,40 +565,40 @@ const Profile = () => {
                 </div>
             </div>
             <div className="w-full max-w-full px-8 my-4">
-                <div className="flex flex-col h-full min-w-0 bg-gray-100 border-0 shadow-xl rounded-md">
-                    <div className="p-4 pb-0 border-b bg-white rounded-t-md">
-                        <h6 className="text-xl font-bold text-gray-800">
+                <div className="flex flex-col h-full min-w-0 bg-[#262522] border-0 shadow-xl rounded-md">
+                    <div className="p-4 pb-0 border-b bg-[#262522] rounded-t-md">
+                        <h6 className="text-xl mb-3 text-center font-bold text-[#E3C78A]">
                             Order List
                         </h6>
                     </div>
                     <div className="p-4">
-                        <div className="bg-white rounded-lg shadow-md">
+                        <div className="bg-gray-300 rounded-lg shadow-md">
                             <div className="overflow-y-auto max-h-80">
                                 <table className="table-auto w-full border-collapse">
-                                    <thead className="bg-gray-200 sticky top-0 z-10">
+                                    <thead className="bg-[#302e2b] sticky top-0 z-10">
                                         <tr>
-                                            <th className="px-6 py-3 text-left text-gray-700 font-semibold">
+                                            <th className="px-6 py-3 text-left text-slate-300 font-semibold">
                                                 Product Image
                                             </th>
-                                            <th className="px-6 py-3 text-left text-gray-700 font-semibold">
+                                            <th className="px-6 py-3 text-left text-slate-300 font-semibold">
                                                 Product Name
                                             </th>
-                                            <th className="px-6 py-3 text-left text-gray-700 font-semibold">
+                                            <th className="px-6 py-3 text-left text-slate-300 font-semibold">
                                                 Price
                                             </th>
-                                            <th className="px-6 py-3 text-left text-gray-700 font-semibold">
+                                            <th className="px-6 py-3 text-left text-slate-300 font-semibold">
                                                 Status
                                             </th>
-                                            <th className="px-6 py-3 text-left text-gray-700 font-semibold">
+                                            <th className="px-6 py-3 text-left text-slate-300 font-semibold">
                                                 Expected Delivery
                                             </th>
-                                            <th className="px-6 py-3 text-left text-gray-700 font-semibold">
+                                            <th className="px-6 py-3 text-left text-slate-300 font-semibold">
                                                 Address
                                             </th>
-                                            <th className="px-6 py-3 text-left text-gray-700 font-semibold">
+                                            <th className="px-6 py-3 text-left text-slate-300 font-semibold">
                                                 City
                                             </th>
-                                            <th className="px-6 py-3 text-left text-gray-700 font-semibold">
+                                            <th className="px-6 py-3 text-left text-slate-300 font-semibold">
                                                 Postcode
                                             </th>
                                         </tr>
@@ -672,13 +676,15 @@ const Profile = () => {
             </div>
             {/* Game wallet */}
             <div className="w-full max-w-full px-8 my-2 max-md:mt-3">
-                <div className="flex flex-col h-full min-w-0 break-words bg-gray-200 border-0 shadow-xl rounded-md bg-clip-border">
+                <div className="flex flex-col h-full min-w-0 break-words bg-[#262522] border-0 shadow-xl rounded-md bg-clip-border">
                     <div className="p-4 pb-0 mb-0 border-b-0 rounded-t-2xl">
-                        <h6 className="mb-0 text-xl">Wallet</h6>
+                        <h6 className="mb-0 text-[#E3C78A] text-2xl font-semibold text-center">
+                            Wallet
+                        </h6>
                     </div>
                     <div className="p-4 w-full">
                         <div className="lg:flex gap-4 items-stretch">
-                            <div className="bg-white md:p-2 p-6 rounded-lg border border-gray-200 mb-4 lg:mb-0 shadow-md lg:w-[35%]">
+                            <div className="bg-[#302e2b] md:p-2 p-6 rounded-lg border border-gray-200 mb-4 lg:mb-0 shadow-md lg:w-[35%]">
                                 <div className="flex justify-center items-center space-x-5 h-full">
                                     <div>
                                         <p>Your Dynamo Coin</p>
@@ -700,7 +706,7 @@ const Profile = () => {
                                     />
                                 </div>
                             </div>
-                            <div className="bg-white p-4 rounded-lg xs:mb-4 max-w-full shadow-md lg:w-[65%]">
+                            <div className="bg-[#302e2b] border border-gray-200 p-4 rounded-lg xs:mb-4 max-w-full shadow-md lg:w-[65%]">
                                 <div className="flex flex-wrap justify-between h-full">
                                     <div
                                         onClick={() => setisOpen(!isOpen)}
@@ -724,18 +730,20 @@ const Profile = () => {
                             </div>
                         </div>
                         <div
-                            className="bg-white rounded-lg p-4 shadow-md my-4"
+                            className="bg-[#302e2b] rounded-lg p-4 shadow-md my-4"
                             style={{
                                 overflow: "hidden",
                                 overflowX: "scroll",
+                                scrollbarColor: "#e5e7eb transparent",
+                                scrollbarWidth: "thin",
                             }}
                         >
                             <table className="table-auto w-full">
                                 <thead>
                                     <tr>
                                         <th className="px-4 py-2 text-left border-b-2 w-full">
-                                            <h2 className="text-ml font-bold text-gray-600">
-                                                Transacciones
+                                            <h2 className="text-lg font-bold text-center text-[#E3C78A]">
+                                                Transactions
                                             </h2>
                                         </th>
                                     </tr>
@@ -990,12 +998,14 @@ const Profile = () => {
                 </div>
             )}
             {/* Game history */}
-            <h1 className="mx-10 font-bold my-3 ">Game History</h1>
             <div className="w-full flex justify-center mb-4">
-                <div className="w-full  mx-8 h-96 overflow-y-auto  text-black mt-2 overflow-x-auto bg-clip-border backdrop-blur-2xl backdrop-saturate-200 border-0 shadow-xl rounded-md">
+                <div className="w-full  mx-8 h-96 overflow-y-auto  text-black bg-[#262522] mt-2 overflow-x-auto bg-clip-border backdrop-blur-2xl backdrop-saturate-200 border-0 shadow-xl rounded-md">
+                    <h1 className="mx-10 font-semibold my-3 text-[#E3C78A] text-xl text-center">
+                        Game History
+                    </h1>
                     <table className="min-w-full">
                         <thead className="sticky top-0">
-                            <tr className="bg-gray-200 text-left">
+                            <tr className="bg-[#302e2b] text-left">
                                 <th className="py-2 px-4">Date</th>
                                 <th className="py-2 px-4">Opponent Name</th>
                                 <th className="py-2 px-4">Game Status</th>
