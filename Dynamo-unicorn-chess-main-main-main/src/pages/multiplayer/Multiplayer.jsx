@@ -992,7 +992,7 @@ function Multiplayer() {
                 <GiBulletBill className="text-3xl" />
               </div>
               <div className="text-gray-50">
-                <p className="flex gap-1 leading-none">
+                <div className="flex gap-1 leading-none">
                   1+1
                   <div className="flex items-center">
                     <BsDot />
@@ -1002,46 +1002,46 @@ function Multiplayer() {
                     <BsDot />
                   </div>
                   Bullet
-                </p>
+                </div>
                 {tournamentID && (
                   <>
-                    <p className="text-xs">Round Number: {tournamentData.upComingRound - 1}</p>
-                    <p className="text-xs">Tournament Name: {tournamentData.tournamentName}</p>
+                    <div className="text-xs">Round Number: {tournamentData.upComingRound - 1}</div>
+                    <div className="text-xs">Tournament Name: {tournamentData.tournamentName}</div>
                   </>
                 )}
 
               </div>
             </div>
-            <p className="flex justify-between text-gray-50 leading-none mt-2">
-              <p>Sound</p>
+            <div className="flex justify-between text-gray-50 leading-none mt-2">
+              <div>Sound</div>
               <label className="inline-flex items-center cursor-pointer">
                 <input type="checkbox" checked={isSound}
                   onChange={handleSoundChange} className="sr-only peer" />
                 <div className={`relative w-7 h-4 bg-red-600 peer-focus:outline-none dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-white peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-black after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-lime-500`} />
               </label>
-            </p>
-            <p className="flex justify-between text-gray-50 leading-none mt-2">
-              <p>Navigation</p>
+            </div>
+            <div className="flex justify-between text-gray-50 leading-none mt-2">
+              <div>Navigation</div>
               <label className="inline-flex items-center cursor-pointer">
                 <input type="checkbox" checked={gamenavigationData}
                   onChange={handleNavigationChange} className="sr-only peer" />
                 <div className={`relative w-7 h-4 bg-red-600 peer-focus:outline-none dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-white peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-black after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-lime-500`} />
               </label>
-            </p>
-            <p className="bg-gray-600 py-[.5px] my-2"></p>
+            </div>
+            <div className="bg-gray-600 py-[.5px] my-2"></div>
           </div>
           {/* chat room */}
           <div className="bg-gray-900 relative ms-8 max-md:mx-1 rounded-md p-3 h-[400px] mt-4 ">
             <div className="flex justify-between text-gray-50">
-              <p className="text-sm">Chat room</p>
+              <div className="text-sm">Chat room</div>
               <div className="flex items-center">
-                <p className="p-1.5 bg-green-800 rounded-sm border border-gray-600"></p>
+                <div className="p-1.5 bg-green-800 rounded-sm border border-gray-600"></div>
               </div>
             </div>
             <div className="h-[300px] overflow-y-auto mt-4 px-2">
               {messages.map((msg, index) => (
                 <div key={index} className={msg.playerId === UserDetail._id ? 'text-end text-green-800' : 'text-start text-white'}>
-                  <p className="message">{msg.message}</p>
+                  <div className="message">{msg.message}</div>
                 </div>
               ))}
             </div>
@@ -1083,7 +1083,7 @@ function Multiplayer() {
                       >
                         <FaXmark className={`text-3xl text-black  `} />
                       </button>
-                      <p className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Abort</p>
+                      <div className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Abort</div>
                     </>
                     :
 
@@ -1095,7 +1095,7 @@ function Multiplayer() {
                       >
                         <IoArrowUndoSharp className={`text-3xl text-black ${isDrawDisabled && 'text-gray-700'}`} />
                       </button>
-                      <p className="absolute top-[-44px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Propose a tackback</p>
+                      <div className="absolute top-[-44px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Propose a tackback</div>
                     </>
 
                   }
@@ -1109,7 +1109,7 @@ function Multiplayer() {
                     <img src={onehalficon} alt="" className="w-5 h-5" />
                     {/* {Threefold && <span className="text-red-800 text-[10px] absolute left-0">Three Fold</span>} */}
                   </button>
-                  <p className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Request Draw</p>
+                  <div className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Request Draw</div>
                 </div>
                 <div className="relative group">
                   <button
@@ -1119,7 +1119,7 @@ function Multiplayer() {
                   >
                     <FaFlag className={`text-2xl text-black ${isLeaveDisabled && 'text-gray-700'}`} />
                   </button>
-                  <p className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Resign</p>
+                  <div className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Resign</div>
                 </div>
               </div>
             }
@@ -1131,19 +1131,19 @@ function Multiplayer() {
                           >
                             <MdSpaceDashboard className={`text-2xl text-black`} />
                           </button>
-                          <p className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Go To Dashboard</p>
+                          <div className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Go To Dashboard</div>
                         </div> : ""} */}
             <div className="flex gap-6 px-5 py-3 rounded-sm">
               <div className="relative group">
                 {fivefoldStatus ?
-                  <p className={`text-sm text-black p-1 `}>Five Fold</p> :
+                  <div className={`text-sm text-black p-1 `}>Five Fold</div> :
                   (Threefold && userId === playernextId) &&
                   <button
                     className={`hover:bg-gray-700 p-1 active:bg-green-400 rounded-sm bg-gray-500 `}
                     onClick={Handlethreefold}
                   // disabled={isDrawDisabled}
                   >
-                    <p className={`text-sm text-black `}>Three Fold</p>
+                    <div className={`text-sm text-black `}>Three Fold</div>
                   </button>
                 }
               </div>
@@ -1152,18 +1152,18 @@ function Multiplayer() {
           </div>
           <div className={` w-full sm:hidden bg-black my-2 ${mobileshownotification && "p-4"} `}>
             <div className={`${win ? 'visible bg-gray-400' : 'hidden'}`}>
-              <p className="text-center capitalize text-black font-bold text-xl my-1"><span>{playerId === win?.playerId ? "0-1" : '1-0'}</span></p>
-              <p className="text-center capitalize text-black my-1">{playerId === win?.playerId ? "Black Win" : 'White Win'}</p>
+              <div className="text-center capitalize text-black font-bold text-xl my-1"><span>{playerId === win?.playerId ? "0-1" : '1-0'}</span></div>
+              <div className="text-center capitalize text-black my-1">{playerId === win?.playerId ? "Black Win" : 'White Win'}</div>
             </div>
             <div className={`${DrawStatus ? 'visible bg-gray-400' : 'hidden'}`}>
-              <p className="text-center capitalize text-black font-bold text-xl my-1"><span>{"1/2-1/2"}</span></p>
-              <p className="text-center capitalize text-black font-bold text-xl my-1">Draw</p>
+              <div className="text-center capitalize text-black font-bold text-xl my-1"><span>{"1/2-1/2"}</span></div>
+              <div className="text-center capitalize text-black font-bold text-xl my-1">Draw</div>
             </div>
             {/* <div className={`${threefoldStatus ? 'visible bg-gray-400' : 'hidden'}`}>
-              <p className="text-center capitalize text-black font-bold text-xl my-1"><span>{"1/2-1/2"}</span></p>
-              <p className="text-center capitalize text-black font-bold text-xl my-1">Draw</p>
+              <div className="text-center capitalize text-black font-bold text-xl my-1"><span>{"1/2-1/2"}</span></div>
+              <div className="text-center capitalize text-black font-bold text-xl my-1">Draw</div>
             </div> */}
-            <p className={`text-center capitalize text-white ${gameAborted ? 'visible' : 'hidden'}`}>Game aborted</p>
+            <div className={`text-center capitalize text-white ${gameAborted ? 'visible' : 'hidden'}`}>Game aborted</div>
             <div className={`${gameAborted || LeaveRoom || win || DrawStatus || threefoldStatus ? 'visible' : 'hidden'}`}>
               <div className="grid py-2 bg-gray-500 my-1 hover:bg-green-700 text-white">
                 <button className="uppercase cursor-pointer" onClick={HandleRematch}>Rematch</button>
@@ -1177,7 +1177,7 @@ function Multiplayer() {
             </div>
 
             <div className={`${Draw ? 'bg-gray-500 text-black visible w-full p-2' : "hidden"}`}>
-              <p className="text-center">{Draw} </p>
+              <div className="text-center">{Draw} </div>
               <div className="flex justify-end gap-3 me-5 mt-8 ">
                 <button className="text-blue-700 hover:text-blue-800 active:text-green-800" onClick={HandleDraw}>Accept</button>
                 <button className="hover:text-gray-700 active:text-red-800" onClick={CancelDraw}>Cancel</button>
@@ -1185,21 +1185,21 @@ function Multiplayer() {
             </div>
             {/* Leave room confirmation */}
             <div className={`${leave ? 'bg-gray-500 text-black visible w-full p-2' : "hidden"}`}>
-              <p className="text-center">Do you want to Leave Game? </p>
+              <div className="text-center">Do you want to Leave Game? </div>
               <div className="flex justify-end gap-3 me-5 mt-8 ">
                 <button className="text-blue-700 hover:text-blue-800 active:text-green-800" onClick={handleLeaveRoom}>Yes</button>
                 <button className="hover:text-gray-700 active:text-red-800" onClick={() => setLeave(false)}>No</button>
               </div>
             </div>
             <div className={`${rematch ? 'bg-gray-500 text-black visible w-full p-2' : "hidden"}`}>
-              <p className="text-center">{"Do you wanna play game"} </p>
+              <div className="text-center">{"Do you wanna play game"} </div>
               <div className="flex justify-end gap-3 me-5 mt-8 ">
                 <button className="text-blue-700 hover:text-blue-800 active:text-green-800" onClick={HandleRematchAccept}>Accept</button>
                 <button className="hover:text-gray-700 active:text-red-800" onClick={CancelRematch}>Cancel</button>
               </div>
             </div>
             <div className={`${tackback ? 'bg-gray-500 text-black visible w-full p-2 mb-1' : "hidden"}`}>
-              <p className="text-center">{"Your opponent proposes a takeback"} </p>
+              <div className="text-center">{"Your opponent proposes a takeback"} </div>
               <div className="flex justify-end gap-3 me-5 mt-8 ">
                 <button className="text-blue-700 hover:text-blue-800 active:text-green-800" onClick={HandleTackbackAccept}>Accept</button>
                 <button className="hover:text-gray-700 active:text-red-800" onClick={CancelTackback}>Cancel</button>
@@ -1217,18 +1217,18 @@ function Multiplayer() {
                   <div className="flex p-2 gap-1 items-center">
 
                     <GoDotFill className={`text-xl ${userId !== playernextId && "text-green-400"}`} />
-                    <p className="truncate" >
+                    <div className="truncate" >
                       {Players ? Players?.[0]?.name : "Anonymous"}
-                    </p>
+                    </div>
                     <div className="flex items-center ">
-                      <p>
+                      <div>
 
                         {Players && Players[0]?.countryicon == undefined ? "" : <img className="h-6 w-9 ml-4" src={Players && Players[0]?.countryicon} alt="countryIcon" />}
-                      </p>
-                      <p className="ms-7">
+                      </div>
+                      <div className="ms-7">
 
                         {Players && Players ? ` Rating: ${Players?.[0]?.Rating.toFixed(2)} ` : "0"}
-                      </p>
+                      </div>
                     </div>
 
                   </div>
@@ -1239,7 +1239,7 @@ function Multiplayer() {
               <div className="flex justify-center items-center sm:my-2 lg:my-0">
                 <Board />
                 {!IspopupDisabled && (
-                  <p className="py-6 px-4 absolute border border-black rounded-md bg-white text-black">
+                  <div className="py-6 px-4 absolute border border-black rounded-md bg-white text-black">
                     {url.includes("tournament:")
                       ? (
                         <>
@@ -1248,7 +1248,7 @@ function Multiplayer() {
                         </>
                       )
                       : "Please Wait for an Opponent"}
-                  </p>
+                  </div>
 
 
                 )}
@@ -1259,21 +1259,21 @@ function Multiplayer() {
                 <div className="flex sm:hidden font-bold  text-black p-2  justify-between items-center">
 
                   <GoDotFill className={`text-xl ms-2 ${(userId == playernextId || playernextTurn === 'b') && 'text-green-400'}`} />
-                  <p className="truncate">
+                  <div className="truncate">
                     {Players ? Players?.[1]?.name : "Anonymous"}
-                  </p>
+                  </div>
                   <div className="flex items-center">
-                    <p>
+                    <div>
                       {
                         Players && Players[1]?.countryicon == undefined ? "" :
                           <img className="h-6 w-9  ml-4" src={Players && Players[1]?.countryicon} alt="countryIcon" />
                       }
 
-                    </p>
-                    <p className="ms-7">
+                    </div>
+                    <div className="ms-7">
 
                       {Players && Players ? `Rating: ${Players?.[1]?.Rating.toFixed(2)}` : "0"}
-                    </p>
+                    </div>
                   </div>
 
                 </div>
@@ -1292,20 +1292,20 @@ function Multiplayer() {
                 {/* name and flag mobile view */}
                 <div className="flex font-bold sm:hidden text-black p-2 justify-between items-center text-sm">
                   <GoDotFill className={`text-xl ${userId !== playernextId && "text-green-400"}`} />
-                  <p className="truncate">
+                  <div className="truncate">
                     {Players ? Players?.[1]?.name : "Anonymous"}
-                  </p>
+                  </div>
                   <div className="flex items-center">
-                    <p>
+                    <div>
                       {
                         Players && Players[1]?.countryicon == undefined ? "" : <img className="h-6 w-9  ml-4" src={Players && Players[1]?.countryicon} alt="countryIcon" />
                       }
 
-                    </p>
-                    <p className="ms-7">
+                    </div>
+                    <div className="ms-7">
 
                       {Players && Players ? `Rating: ${Players?.[1]?.Rating.toFixed(2)} ` : "0"}
-                    </p>
+                    </div>
 
                   </div>
 
@@ -1315,7 +1315,7 @@ function Multiplayer() {
               <div className="flex justify-center items-center">
                 <Board />
                 {!IspopupDisabled && (
-                  <p className="py-6 px-4 absolute border border-black rounded-md bg-white text-black">
+                  <div className="py-6 px-4 absolute border border-black rounded-md bg-white text-black">
                     {url.includes("tournament:")
                       ? (
                         <>
@@ -1324,29 +1324,25 @@ function Multiplayer() {
                         </>
                       )
                       : "Please Wait for an Opponent"}
-                  </p>
-
-
+                  </div>
                 )}
-
               </div>
               <div className="flex justify-end sm:hidden">
                 {/* name and flag mobile view */}
                 <div className="flex sm:hidden font-bold  text-black text-sm p-2  justify-between items-center">
                   <GoDotFill className={`text-xl ms-2 ${(userId == playernextId || playernextTurn === 'w') && 'text-green-400'}`} />
-                  <p className="truncate">
+                  <div className="truncate">
                     {Players ? Players?.[0]?.name : "Anonymous"}
-                  </p>
+                  </div>
                   <div className="flex items-center">
-                    <p>
+                    <div>
                       {
                         Players && Players[0]?.countryicon == undefined ? "" : <img className="h-6 w-9 ml-4" src={Players && Players[0]?.countryicon} alt="countryIcon" />
                       }
-                    </p>
-                    <p className="ms-7">
+                    </div>
+                    <div className="ms-7">
                       {Players && Players ? `Rating: ${Players?.[0]?.Rating.toFixed(2)}` : "0"}
-
-                    </p>
+                    </div>
 
                   </div>
                 </div>
@@ -1394,19 +1390,19 @@ function Multiplayer() {
                     </div>
                     <div className={` w-full hidden sm:block `}>
                       <div className={`${win ? 'visible bg-gray-400' : 'hidden'}`}>
-                        <p className="text-center capitalize text-black font-bold text-xl my-1"><span>{playerId === win?.playerId ? "0-1" : '1-0'}</span></p>
-                        <p className="text-center capitalize text-black my-1">{playerId === win?.playerId ? "Black Win" : 'White Win'}</p>
+                        <div className="text-center capitalize text-black font-bold text-xl my-1"><span>{playerId === win?.playerId ? "0-1" : '1-0'}</span></div>
+                        <div className="text-center capitalize text-black my-1">{playerId === win?.playerId ? "Black Win" : 'White Win'}</div>
                       </div>
                       {url.includes("tournament:") === true ? <></> : <>
                         <div className={`${DrawStatus ? 'visible bg-gray-400' : 'hidden'}`}>
-                          <p className="text-center capitalize text-black font-bold text-xl my-1"><span>{"1/2-1/2"}</span></p>
-                          <p className="text-center capitalize text-black font-bold text-xl my-1">Draw</p>
+                          <div className="text-center capitalize text-black font-bold text-xl my-1"><span>{"1/2-1/2"}</span></div>
+                          <div className="text-center capitalize text-black font-bold text-xl my-1">Draw</div>
                         </div>
                         {/* <div className={`${threefoldStatus ? 'visible bg-gray-400' : 'hidden'}`}>
-                        <p className="text-center capitalize text-black font-bold text-xl my-1"><span>{"1/2-1/2"}</span></p>
-                        <p className="text-center capitalize text-black font-bold text-xl my-1">Draw</p>
+                        <div className="text-center capitalize text-black font-bold text-xl my-1"><span>{"1/2-1/2"}</span></div>
+                        <div className="text-center capitalize text-black font-bold text-xl my-1">Draw</div>
                       </div> */}
-                        <p className={`text-center capitalize text-white ${gameAborted ? 'visible' : 'hidden'}`}>Game aborted</p>
+                        <div className={`text-center capitalize text-white ${gameAborted ? 'visible' : 'hidden'}`}>Game aborted</div>
                         <div className={`${gameAborted || LeaveRoom || win || DrawStatus || threefoldStatus ? 'visible' : 'hidden'}`}>
                           <div className="grid py-2 bg-gray-500 my-1 hover:bg-green-700 text-white">
                             <button className="uppercase cursor-pointer" onClick={HandleRematch}>Rematch</button>
@@ -1420,7 +1416,7 @@ function Multiplayer() {
                         </div>
 
                         <div className={`${Draw ? 'bg-gray-500 text-black visible w-full p-2' : "hidden"}`}>
-                          <p className="text-center">{Draw} </p>
+                          <div className="text-center">{Draw} </div>
                           <div className="flex justify-end gap-3 me-5 mt-8 ">
                             <button className="text-blue-700 hover:text-blue-800 active:text-green-800" onClick={HandleDraw}>Accept</button>
                             <button className="hover:text-gray-700 active:text-red-800" onClick={CancelDraw}>Cancel</button>
@@ -1431,21 +1427,21 @@ function Multiplayer() {
 
                       {/* Leave room confirmation */}
                       <div className={`${leave ? 'bg-gray-500 text-black visible w-full p-2' : "hidden"}`}>
-                        <p className="text-center">Do you want to Leave Game? </p>
+                        <div className="text-center">Do you want to Leave Game? </div>
                         <div className="flex justify-end gap-3 me-5 mt-8 ">
                           <button className="text-blue-700 hover:text-blue-800 active:text-green-800" onClick={handleLeaveRoom}>Yes</button>
                           <button className="hover:text-gray-700 active:text-red-800" onClick={() => setLeave(false)}>No</button>
                         </div>
                       </div>
                       <div className={`${rematch ? 'bg-gray-500 text-black visible w-full p-2' : "hidden"}`}>
-                        <p className="text-center">{"Do you wanna play game"} </p>
+                        <div className="text-center">{"Do you wanna play game"} </div>
                         <div className="flex justify-end gap-3 me-5 mt-8 ">
                           <button className="text-blue-700 hover:text-blue-800 active:text-green-800" onClick={HandleRematchAccept}>Accept</button>
                           <button className="hover:text-gray-700 active:text-red-800" onClick={CancelRematch}>Cancel</button>
                         </div>
                       </div>
                       <div className={`${tackback ? 'bg-gray-500 text-black visible w-full p-2 mb-1' : "hidden"}`}>
-                        <p className="text-center">{"Your opponent proposes a takeback"} </p>
+                        <div className="text-center">{"Your opponent proposes a takeback"} </div>
                         <div className="flex justify-end gap-3 me-5 mt-8 ">
                           <button className="text-blue-700 hover:text-blue-800 active:text-green-800" onClick={HandleTackbackAccept}>Accept</button>
                           <button className="hover:text-gray-700 active:text-red-800" onClick={CancelTackback}>Cancel</button>
@@ -1467,7 +1463,7 @@ function Multiplayer() {
                                 >
                                   <FaXmark className={`text-3xl text-black  `} />
                                 </button>
-                                <p className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Abort</p>
+                                <div className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Abort</div>
                               </>
                               :
 
@@ -1479,7 +1475,7 @@ function Multiplayer() {
                                 >
                                   <IoArrowUndoSharp className={`text-3xl text-black ${isDrawDisabled && 'text-gray-700'}`} />
                                 </button>
-                                <p className="absolute top-[-44px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Propose a tackback</p>
+                                <div className="absolute top-[-44px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Propose a tackback</div>
                               </>
 
                             }
@@ -1493,7 +1489,7 @@ function Multiplayer() {
                               <img src={onehalficon} alt="" className="w-5 h-5" />
                               {/* {Threefold && <span className="text-red-800 text-[10px] absolute left-0">Three Fold</span>} */}
                             </button>
-                            <p className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Request Draw</p>
+                            <div className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Request Draw</div>
                           </div>
                           <div className="relative group">
                             <button
@@ -1503,7 +1499,7 @@ function Multiplayer() {
                             >
                               <FaFlag className={`text-2xl text-black ${isLeaveDisabled && 'text-gray-700'}`} />
                             </button>
-                            <p className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Resign</p>
+                            <div className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Resign</div>
                           </div>
                         </div>
                       }
@@ -1515,20 +1511,20 @@ function Multiplayer() {
                           >
                             <MdSpaceDashboard className={`text-2xl text-black`} />
                           </button>
-                          <p className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Go To Dashboard</p>
+                          <div className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Go To Dashboard</div>
                         </div> : ""} */}
                       <div className="flex gap-6 px-5 py-3 rounded-sm">
                         <div className="relative group">
                           {
                             fivefoldStatus ?
-                              <p className={`text-sm text-black p-1 `}>Five Fold</p> :
+                              <div className={`text-sm text-black p-1 `}>Five Fold</div> :
                               (Threefold && userId === playernextId) &&
                               <button
                                 className={`hover:bg-gray-700 p-1 active:bg-green-400 rounded-sm bg-gray-500 `}
                                 onClick={Handlethreefold}
                               // disabled={isDrawDisabled}
                               >
-                                <p className={`text-sm text-black `}>Three Fold</p>
+                                <div className={`text-sm text-black `}>Three Fold</div>
                               </button>
                           }
                         </div>
@@ -1582,19 +1578,19 @@ function Multiplayer() {
                     </div>
                     <div className={`  w-full hidden sm:block `}>
                       <div className={`${win ? 'visible bg-gray-400' : 'hidden'}`}>
-                        <p className="text-center capitalize text-black font-bold text-xl my-1"><span>{playerId === win?.playerId ? "0-1" : '1-0'}</span></p>
-                        <p className="text-center capitalize text-black my-1">{playerId === win?.playerId ? "Black Win" : 'White Win'}</p>
+                        <div className="text-center capitalize text-black font-bold text-xl my-1"><span>{playerId === win?.playerId ? "0-1" : '1-0'}</span></div>
+                        <div className="text-center capitalize text-black my-1">{playerId === win?.playerId ? "Black Win" : 'White Win'}</div>
                       </div>
                       {url.includes("tournament:") === true ? <></> : <>
                         <div className={`${DrawStatus ? 'visible bg-gray-400' : 'hidden'}`}>
-                          <p className="text-center capitalize text-black font-bold text-xl my-1"><span>{"1/2-1/2"}</span></p>
-                          <p className="text-center capitalize text-black font-bold text-xl my-1">Draw</p>
+                          <div className="text-center capitalize text-black font-bold text-xl my-1"><span>{"1/2-1/2"}</span></div>
+                          <div className="text-center capitalize text-black font-bold text-xl my-1">Draw</div>
                         </div>
                         {/* <div className={`${threefoldStatus ? 'visible bg-gray-400' : 'hidden'}`}>
-                        <p className="text-center capitalize text-black font-bold text-xl my-1"><span>{"1/2-1/2"}</span></p>
-                        <p className="text-center capitalize text-black font-bold text-xl my-1">Draw</p>
+                        <div className="text-center capitalize text-black font-bold text-xl my-1"><span>{"1/2-1/2"}</span></div>
+                        <div className="text-center capitalize text-black font-bold text-xl my-1">Draw</div>
                       </div> */}
-                        <p className={`text-center capitalize text-white ${gameAborted ? 'visible' : 'hidden'}`}>Game aborted</p>
+                        <div className={`text-center capitalize text-white ${gameAborted ? 'visible' : 'hidden'}`}>Game aborted</div>
                         <div className={`${gameAborted || LeaveRoom || win || DrawStatus || threefoldStatus ? 'visible' : 'hidden'}`}>
                           <div className="grid py-2 bg-gray-500 my-1 hover:bg-green-700 text-white">
                             <button className="uppercase cursor-pointer" onClick={HandleRematch}>Rematch</button>
@@ -1608,7 +1604,7 @@ function Multiplayer() {
                         </div>
                         {/* draw confirmation */}
                         <div className={`${Draw ? 'bg-gray-500 text-black visible w-full p-2' : "hidden"}`}>
-                          <p className="text-center">{Draw} </p>
+                          <div className="text-center">{Draw} </div>
                           <div className="flex justify-end gap-3 me-5 mt-8 ">
                             <button className="text-blue-700 hover:text-blue-800 active:text-green-800" onClick={HandleDraw}>Accept</button>
                             <button className="hover:text-gray-700 active:text-red-800" onClick={CancelDraw}>Cancel</button>
@@ -1618,7 +1614,7 @@ function Multiplayer() {
 
                       {/* Leave room confirmation */}
                       <div className={`${leave ? 'bg-gray-500 text-black visible w-full p-2' : "hidden"}`}>
-                        <p className="text-center">Do you want to Leave Game? </p>
+                        <div className="text-center">Do you want to Leave Game? </div>
                         <div className="flex justify-end gap-3 me-5 mt-8 ">
                           <button className="text-blue-700 hover:text-blue-800 active:text-green-800" onClick={handleLeaveRoom}>Yes</button>
                           <button className="hover:text-gray-700 active:text-red-800" onClick={() => setLeave(false)}>No</button>
@@ -1626,7 +1622,7 @@ function Multiplayer() {
                       </div>
                       {/* rematch confirmation */}
                       <div className={`${rematch ? 'bg-gray-500 text-black visible w-full p-2' : "hidden"}`}>
-                        <p className="text-center">{"Do you wanna play game"} </p>
+                        <div className="text-center">{"Do you wanna play game"} </div>
                         <div className="flex justify-end gap-3 me-5 mt-8 ">
                           <button className="text-blue-700 hover:text-blue-800 active:text-green-800" onClick={HandleRematchAccept}>Accept</button>
                           <button className="hover:text-gray-700 active:text-red-800" onClick={CancelRematch}>Cancel</button>
@@ -1634,7 +1630,7 @@ function Multiplayer() {
                       </div>
                       {/* tack back confirmation */}
                       <div className={`${tackback ? 'bg-gray-500 text-black visible w-full p-2 mb-1' : "hidden"}`}>
-                        <p className="text-center">{"Your opponent proposes a takeback"} </p>
+                        <div className="text-center">{"Your opponent proposes a takeback"} </div>
                         <div className="flex justify-end gap-3 me-5 mt-8 ">
                           <button className="text-blue-700 hover:text-blue-800 active:text-green-800" onClick={HandleTackbackAccept}>Accept</button>
                           <button className="hover:text-gray-700 active:text-red-800" onClick={CancelTackback}>Cancel</button>
@@ -1655,7 +1651,7 @@ function Multiplayer() {
                                 >
                                   <FaXmark className={`text-3xl text-black  `} />
                                 </button>
-                                <p className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Abort</p>
+                                <div className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Abort</div>
                               </>
                               :
 
@@ -1667,7 +1663,7 @@ function Multiplayer() {
                                 >
                                   <IoArrowUndoSharp className={`text-3xl text-black ${isDrawDisabled && 'text-gray-700'}`} />
                                 </button>
-                                <p className="absolute top-[-44px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Propose a tackback</p>
+                                <div className="absolute top-[-44px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Propose a tackback</div>
                               </>
 
                             }
@@ -1681,7 +1677,7 @@ function Multiplayer() {
                               <img src={onehalficon} alt="" className="w-5 h-5" />
                               {/* {Threefold && <span className="text-red-800 text-[10px] absolute left-0">Three Fold</span>} */}
                             </button>
-                            <p className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Request Draw</p>
+                            <div className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Request Draw</div>
                           </div>
                           <div className="relative group">
                             <button
@@ -1691,7 +1687,7 @@ function Multiplayer() {
                             >
                               <FaFlag className={`text-2xl text-black ${isLeaveDisabled && 'text-gray-700'}`} />
                             </button>
-                            <p className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Resign</p>
+                            <div className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Resign</div>
                           </div>
                         </div>
                       }
@@ -1703,20 +1699,20 @@ function Multiplayer() {
                           >
                             <MdSpaceDashboard className={`text-2xl text-black`} />
                           </button>
-                          <p className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Go To Dashboard</p>
+                          <div className="absolute top-[-30px] left-1/2 transform -translate-x-1/2 bg-black text-white p-1 rounded text-xs opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300">Go To Dashboard</div>
                         </div> : ""} */}
                       <div className="flex gap-6 px-5 py-3 rounded-sm">
                         <div className="relative group">
                           {
                             fivefoldStatus ?
-                              <p className={`text-sm text-black p-1 `}>Five Fold</p> :
+                              <div className={`text-sm text-black p-1 `}>Five Fold</div> :
                               (Threefold && userId === playernextId) &&
                               <button
                                 className={`hover:bg-gray-700 p-1 active:bg-green-400 rounded-sm bg-gray-500 `}
                                 onClick={Handlethreefold}
                               // disabled={isDrawDisabled}
                               >
-                                <p className={`text-sm text-black `}>Three Fold</p>
+                                <div className={`text-sm text-black `}>Three Fold</div>
                               </button>
                           }
                         </div>
@@ -1753,7 +1749,7 @@ function Multiplayer() {
                 <GiBulletBill className="text-3xl" />
               </div>
               <div className="text-gray-50">
-                <p className="flex gap-1 leading-none">
+                <div className="flex gap-1 leading-none">
                   1+1
                   <div className="flex items-center">
                     <BsDot />
@@ -1763,44 +1759,44 @@ function Multiplayer() {
                     <BsDot />
                   </div>
                   Bullet
-                </p>
+                </div>
                 {tournamentID && (
                   <>
-                    <p className="text-xs">Round Number: {tournamentData.upComingRound - 1}</p>
-                    <p className="text-xs">Tournament Name: {tournamentData.tournamentName}</p>
+                    <div className="text-xs">Round Number: {tournamentData.upComingRound - 1}</div>
+                    <div className="text-xs">Tournament Name: {tournamentData.tournamentName}</div>
                   </>
                 )}
               </div>
             </div>
-            <p className="flex justify-between text-gray-50 leading-none mt-2">
-              <p>Sound</p>
+            <div className="flex justify-between text-gray-50 leading-none mt-2">
+              <div>Sound</div>
               <label className="inline-flex items-center cursor-pointer">
                 <input type="checkbox" checked={isSound}
                   onChange={handleSoundChange} className="sr-only peer" />
                 <div className={`relative w-7 h-4 bg-red-600 peer-focus:outline-none dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-white peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-black after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-lime-500`} />
               </label>
-            </p>
-            <p className="flex justify-between text-gray-50 leading-none mt-2">
-              <p>Navigation</p>
+            </div>
+            <div className="flex justify-between text-gray-50 leading-none mt-2">
+              <div>Navigation</div>
               <label className="inline-flex items-center cursor-pointer">
                 <input type="checkbox" checked={gamenavigationData}
                   onChange={handleNavigationChange} className="sr-only peer" />
                 <div className={`relative w-7 h-4 bg-red-600 peer-focus:outline-none dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-white peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-black after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-lime-500`} />
               </label>
-            </p>
-            <p className="bg-gray-600 py-[.5px] my-2"></p>
+            </div>
+            <div className="bg-gray-600 py-[.5px] my-2"></div>
           </div>
           <div className="bg-gray-900 relative ms-8 max-md:mx-1 rounded-md p-3 h-[400px] mt-4 ">
             <div className="flex justify-between text-gray-50">
-              <p className="text-sm">Chat room</p>
+              <div className="text-sm">Chat room</div>
               <div className="flex items-center">
-                <p className="p-1.5 bg-green-800 rounded-sm border border-gray-600"></p>
+                <div className="p-1.5 bg-green-800 rounded-sm border border-gray-600"></div>
               </div>
             </div>
             <div className="h-[300px] overflow-y-auto mt-4 px-2">
               {messages.map((msg, index) => (
                 <div key={index} className={msg.playerId === UserDetail._id ? 'text-end text-green-800' : 'text-start text-white'}>
-                  <p className="message">{msg.message}</p>
+                  <div className="message">{msg.message}</div>
                 </div>
               ))}
             </div>

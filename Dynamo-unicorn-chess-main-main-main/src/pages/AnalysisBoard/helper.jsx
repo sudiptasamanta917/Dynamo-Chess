@@ -1,6 +1,5 @@
 // import { InitialPosition } from "./pages/multiplayer/Utils/getLocalStorageData";
 import captureSound from "../../assets/sound/capture.mp3";
-
 import pieceSound from "../../assets/sound/move.mp3";
 import arbiter from "./arbiter/arbiter";
 import { getKingPosition } from "./arbiter/getMoves";

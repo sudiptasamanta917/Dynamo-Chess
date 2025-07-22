@@ -15,7 +15,7 @@ export const getApi = async (url) => {
 export const getApiWithToken = async (url,) => {
     // console.log(url);
     const token = localStorage.getItem('chess-user-token')
-    console.log(token,"ttttttt ");
+    // console.log(token,"ttttttt ");
     
     try {
         const response = await axios(url, {

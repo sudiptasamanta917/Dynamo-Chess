@@ -21,7 +21,9 @@ const JoinTournament = ({Url,targetTimes}) => {
   const datetimeQuery = useQuery(
     'datetimeQuery6',
     async () => {
-      const response = await fetch(`${VITE_URL}/getCurrentTime`);
+      const response = await fetch(
+          `${import.meta.env.VITE_URL}/getCurrentTime`
+      );
       const { time } = await response.json();
       return time;; // assuming the response is in JSON format
     },

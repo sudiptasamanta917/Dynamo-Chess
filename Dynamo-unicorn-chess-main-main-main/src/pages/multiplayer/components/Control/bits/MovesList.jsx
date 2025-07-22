@@ -4,8 +4,8 @@ import socket from '../../../socket';
 import './MovesList.css';
 import { CurrentIndex } from '../../../../../reducer/actions/move';
 import captureSound from "../../../../../assets/sound/capture.mp3";
-// import captureSound from "../../../../../assets";
 import pieceSound from "../../../../../assets/sound/move.mp3";
+
 const pieceS = new Audio(pieceSound);
 const captureS = new Audio(captureSound);
 // const sound=localStorage.getItem("Sound")

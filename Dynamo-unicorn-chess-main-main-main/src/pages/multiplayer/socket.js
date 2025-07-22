@@ -1,13 +1,8 @@
 import io from 'socket.io-client';
 
-// const socket = io.connect('https://chess-8kfd.onrender.com',);
-// const socket = io.connect('https://chess.${VITE_URL}');
-// const socket = io.connect('http://localhost:8080',);
-// Listen for the 'connect' event
-
-const socket = io.connect('http://localhost:5000');
+const socket = io.connect(`${import.meta.env.VITE_SOCKET_URL}`);
 socket.on('connect', () => {
-    console.log('Socket connected');
+    console.log("Connected to socket:", socket.id);
   });
   
   // Listen for the 'disconnect' event

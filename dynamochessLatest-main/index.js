@@ -271,42 +271,46 @@ const updateRatings = async (player1, player2, coin) => {
     console.error("Error updating ratings:", error);
   }
 };
-app.get("/update-activity/:id", async (req, res) => {
-  const { id } = req.params;
-  try {
-    // Find the user by ID
-    let user = await User.findById(id);
-    // If user doesn't exist, return an error
-    if (!user) {
-      return res.status(404).json({ message: "User not found" });
+
+app.get("/api/update-activity/:id", async (req, res) => {
+    const { id } = req.params;
+    try {
+        // Find the user by ID
+        let user = await User.findById(id);
+        // If user doesn't exist, return an error
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+        // Update the last activity timestamp
+        user.lastActivity = new Date();
+        await user.save();
+        res.status(200).json({ message: "Activity updated successfully" });
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send("Server Error");
     }
-    // Update the last activity timestamp
-    user.lastActivity = new Date();
-    await user.save();
-    res.status(200).json({ message: "Activity updated successfully" });
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Server Error");
-  }
 });
-app.get("/online-users", async (req, res) => {
-  try {
-    // Find users whose last activity is within the last 10 minutes
-    const threshold = new Date(Date.now() - 60 * 60 * 1000); // 10 minutes ago
-    const onlineUsers = await User.find({ lastActivity: { $gt: threshold } });
-    if (onlineUsers.length > 0) {
-      res.status(200).json(onlineUsers);
-    } else {
-      res.status(200).json({
-        success: true,
-        message: "No online users found",
-        data: [],
-      });
+
+app.get("/api/online-users", async (req, res) => {
+    try {
+        // Find users whose last activity is within the last 10 minutes
+        const threshold = new Date(Date.now() - 60 * 60 * 1000); // 10 minutes ago
+        const onlineUsers = await User.find({
+            lastActivity: { $gt: threshold },
+        });
+        if (onlineUsers.length > 0) {
+            res.status(200).json(onlineUsers);
+        } else {
+            res.status(200).json({
+                success: true,
+                message: "No online users found",
+                data: [],
+            });
+        }
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send("Server Error");
     }
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Server Error");
-  }
 });
 // crone job for updating the routes
 cron.schedule("* * * * *", async () => {
@@ -340,8 +344,8 @@ cron.schedule("* * * * *", async () => {
   }
 });
 
-app.post("/sendChallenges", async (req, res) => {
-  const { from, to, joinLink } = req.body;
+app.post("/api/sendChallenges", async (req, res) => {
+    const { from, to, joinLink } = req.body;
 });
 
 //============================= socket code ===============================================
@@ -425,7 +429,7 @@ const activeTimers = new Map(); // Store active timers per room
 // console.log(data);
 io.on("connection", async (socket) => {
   // let messages=[]
-  console.log(`A user connected: ${socket.id}`);
+  console.log(`Socket (a user) connected: ${socket.id}`);
   socket.on("joinRoom", async (body) => {
     try {
       const {
@@ -2231,76 +2235,77 @@ const reconnect =async(room_Id,socket_id) => {
     });
   });
 });
-app.get("/flag/:countryName", async (req, res) => {
-  const countryName = req.params.countryName;
-  // console.log(countryName);
-  try {
-    const response = await axios.get(
-      `https://restcountries.com/v3.1/name/${countryName}`
-    );
-    // console.log(response.data[0].flags.svg, "vvvv");
-    if (response.data && response.data.length > 0) {
-      const countryData = response.data[0].flags.svg;
-      res.send(`<img src="${countryData}" alt="Flag of ${countryName}" />`); // Returns the URL of the SVG flag
-    } else {
-      throw new Error("Country not found");
-    }
-  } catch (error) {
-    console.error("Error fetching country data:", error);
-    throw error;
-  }
-});
-
-app.post("/userDeleteNoLoggedIn", async (req, res) => {
-  try {
-    const { email, name, description } = req.body;
-
-    // Create a new delete user request instance
-    const newDeleteUser = new deleteUserRequest({
-      email,
-      name,
-      description,
-    });
-
-    // Save the instance to the database
-    await newDeleteUser.save();
-
-    return res.status(200).json({
-      success: true,
-      message: "User delete request saved successfully",
-      data: newDeleteUser,
-    });
-  } catch (error) {
-    return res.status(500).json({
-      success: false,
-      message: "Server error",
-      error: error.message,
-    });
-  }
-});
-
-app.get("/lookup", async(req, res) => {
+app.get("/api/flag/:countryName", async (req, res) => {
+    const countryName = req.params.countryName;
+    // console.log(countryName);
     try {
-      const data=await PlayersTournament.aggregate([
-        {
-          $looukup:{
-            from:"tournamentdatas",
-            localField:"_id",
-            foreignField:"tournamentId",
-            as:"tournamentData"
-          }
+        const response = await axios.get(
+            `https://restcountries.com/v3.1/name/${countryName}`
+        );
+        // console.log(response.data[0].flags.svg, "vvvv");
+        if (response.data && response.data.length > 0) {
+            const countryData = response.data[0].flags.svg;
+            res.send(
+                `<img src="${countryData}" alt="Flag of ${countryName}" />`
+            ); // Returns the URL of the SVG flag
+        } else {
+            throw new Error("Country not found");
         }
-      ])
-      res.status(200).json({
-        success:true,
-        data:data
-      })
     } catch (error) {
-      console.error("Error in lookup method:", error);
-      res.status(500).json({ message: "Server error", error });
-      
+        console.error("Error fetching country data:", error);
+        throw error;
     }
-})
+});
+
+app.post("/api/userDeleteNoLoggedIn", async (req, res) => {
+    try {
+        const { email, name, description } = req.body;
+
+        // Create a new delete user request instance
+        const newDeleteUser = new deleteUserRequest({
+            email,
+            name,
+            description,
+        });
+
+        // Save the instance to the database
+        await newDeleteUser.save();
+
+        return res.status(200).json({
+            success: true,
+            message: "User delete request saved successfully",
+            data: newDeleteUser,
+        });
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            message: "Server error",
+            error: error.message,
+        });
+    }
+});
+
+app.get("/api/lookup", async (req, res) => {
+    try {
+        const data = await PlayersTournament.aggregate([
+            {
+                $looukup: {
+                    from: "tournamentdatas",
+                    localField: "_id",
+                    foreignField: "tournamentId",
+                    as: "tournamentData",
+                },
+            },
+        ]);
+        res.status(200).json({
+            success: true,
+            data: data,
+        });
+    } catch (error) {
+        console.error("Error in lookup method:", error);
+        res.status(500).json({ message: "Server error", error });
+    }
+});
 
 
 

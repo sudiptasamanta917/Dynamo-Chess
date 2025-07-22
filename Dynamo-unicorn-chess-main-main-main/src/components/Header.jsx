@@ -338,8 +338,8 @@ function Header({ isSidebarOpen, setIsSidebarOpen }) {
         <div className="text-white">
             {/* first header */}
             <JoinTournament Url={joinUrl} targetTimes={remainingTime} />
-            <div className="w-full fixed top-3 left-1/2 transform -translate-x-1/2 z-50">
-                <nav className="shadow-md w-full sm:h-16 h-12 gap-1 flex justify-between px-3 bg-[#96fff649] text-white backdrop-blur-md">
+            <div className="w-[90vw] rounded-lg fixed top-5 left-1/2 transform -translate-x-1/2 z-50">
+                <nav className="shadow-md rounded-lg w-full sm:h-16 h-12 gap-1 flex justify-between px-3 bg-[#96fff649] text-white backdrop-blur-md">
                     <div
                         onClick={() => {
                             setMenu(false);
@@ -387,7 +387,7 @@ function Header({ isSidebarOpen, setIsSidebarOpen }) {
                         </div>
                         {userDetails ? (
                             <div className="flex md:gap-5 gap-2 justify-end max-lg:hidden">
-                                <p className="pt-1">
+                                <div className="pt-1">
                                     <div className="flex items-center bg-[#b2c8ba9a] shadow-2xl rounded-3xl  overflow-hidden h-10">
                                         <input
                                             type="text"
@@ -441,7 +441,7 @@ function Header({ isSidebarOpen, setIsSidebarOpen }) {
                                             </div>
                                         )}
                                     </div>
-                                </p>
+                                </div>
                                 <div className="relative pt-3 pb-2">
                                     <Link to="/profile">
                                         {" "}
@@ -532,9 +532,7 @@ function Header({ isSidebarOpen, setIsSidebarOpen }) {
                         {" "}
                         <Link
                             to="/"
-                            className={`flex items-center gap-3 transition-all duration-500${
-                                isSidebarOpen ? "opacity-100" : "opacity-0"
-                            }`}
+                            className={`flex items-center gap-3 transition-all duration-500`}
                         >
                             <FaHome className="md:text-[25px] text-[20px] text-[#4E342E]" />
                             {isSidebarOpen && "Home"}
@@ -543,9 +541,7 @@ function Header({ isSidebarOpen, setIsSidebarOpen }) {
                     <li className="relative group/item hover:bg-gray-600 hover:text-white mb-4 py-1 px-2 uppercase hover:">
                         {" "}
                         <span
-                            className={`flex items-center gap-3 transition-all duration-500${
-                                isSidebarOpen ? "opacity-100" : "opacity-0"
-                            }`}
+                            className={`flex items-center gap-3 transition-all duration-500`}
                         >
                             <SiChessdotcom className="md:text-[25px] text-[20px] text-[#4E342E]" />
                             {isSidebarOpen && "Play"}
@@ -573,9 +569,7 @@ function Header({ isSidebarOpen, setIsSidebarOpen }) {
                     <li className="relative group/item hover:bg-gray-600 hover:text-white mb-4 py-1 px-2 uppercase hover:">
                         {" "}
                         <span
-                            className={`flex items-center gap-3 transition-all duration-500${
-                                isSidebarOpen ? "opacity-100" : "opacity-0"
-                            }`}
+                            className={`flex items-center gap-3 transition-all duration-500`}
                         >
                             <IoExtensionPuzzleSharp className="md:text-[25px] text-[20px] text-[#4E342E]" />
                             {isSidebarOpen && "puzzles"}
@@ -639,9 +633,7 @@ function Header({ isSidebarOpen, setIsSidebarOpen }) {
                     <li className="relative   group/item hover:bg-gray-600 hover:text-white mb-4 py-1 px-2 uppercase">
                         {" "}
                         <span
-                            className={`flex items-center gap-3 transition-all duration-500${
-                                isSidebarOpen ? "opacity-100" : "opacity-0"
-                            }`}
+                            className={`flex items-center gap-3 transition-all duration-500`}
                         >
                             <MdGroups className="md:text-[25px] text-[20px] text-[#4E342E]" />
                             {isSidebarOpen && "community"}
@@ -685,9 +677,7 @@ function Header({ isSidebarOpen, setIsSidebarOpen }) {
                     <li className="relative  hover: group/item  hover:bg-gray-600 hover:text-white mb-4 py-1 px-2 uppercase">
                         {" "}
                         <span
-                            className={`flex items-center gap-3 transition-all duration-500 ${
-                                isSidebarOpen ? "opacity-100" : "opacity-0"
-                            }`}
+                            className={`flex items-center gap-3 transition-all duration-500`}
                         >
                             <FaTrophy className="md:text-[25px] text-[20px] text-[#4E342E]" />
                             {isSidebarOpen && "Tournaments"}
@@ -708,9 +698,7 @@ function Header({ isSidebarOpen, setIsSidebarOpen }) {
                         {" "}
                         <Link
                             to="/chessLearn"
-                            className={`flex items-center gap-3 transition-all duration-500 ${
-                                isSidebarOpen ? "opacity-100" : "opacity-0"
-                            }`}
+                            className={`flex items-center gap-3 transition-all duration-500`}
                         >
                             <FaBookOpen className="md:text-[25px] text-[20px] text-[#4E342E]" />
                             {isSidebarOpen && "Rules"}
@@ -721,9 +709,7 @@ function Header({ isSidebarOpen, setIsSidebarOpen }) {
                         {" "}
                         <Link
                             to="/aboutUs"
-                            className={`flex items-center gap-3 transition-all duration-500 ${
-                                isSidebarOpen ? "opacity-100" : "opacity-0"
-                            }`}
+                            className={`flex items-center gap-3 transition-all duration-500`}
                         >
                             <FaUserFriends className="md:text-[25px] text-[20px] text-[#4E342E]" />
                             {isSidebarOpen && "About Us"}
@@ -734,9 +720,7 @@ function Header({ isSidebarOpen, setIsSidebarOpen }) {
                         {" "}
                         <Link
                             to="/Games"
-                            className={`flex items-center gap-3 transition-all duration-500 ${
-                                isSidebarOpen ? "opacity-100" : "opacity-0"
-                            }`}
+                            className={`flex items-center gap-3 transition-all duration-500`}
                         >
                             <IoGameController className="md:text-[25px] text-[20px] text-[#4E342E]" />
                             {isSidebarOpen && "Games"}
@@ -785,14 +769,14 @@ function Header({ isSidebarOpen, setIsSidebarOpen }) {
                         <div className="">
                             <ul className="flex justify-between">
                                 {userDetails ? (
-                                    <p className="text-white capitalize  mt-3 px-3">
+                                    <div className="text-white capitalize  mt-3 px-3">
                                         <Link
                                             onClick={() => setMenu(false)}
                                             to="/profile"
                                         >
                                             <FaRegUserCircle className="text-2xl" />
                                         </Link>
-                                    </p>
+                                    </div>
                                 ) : (
                                     <ul className="flex justify-between">
                                         <li

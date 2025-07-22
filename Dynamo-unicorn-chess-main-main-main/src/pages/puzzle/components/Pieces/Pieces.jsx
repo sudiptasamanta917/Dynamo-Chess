@@ -17,7 +17,7 @@ const Pieces = () => {
   
 
 
-    const audio=new Audio(moveaudio)
+    const audio = new Audio(moveaudio);
 
     const { appState , dispatch } = useAppContext();
     const currentPosition = appState.position[appState.position.length-1]
