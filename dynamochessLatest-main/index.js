@@ -27,16 +27,9 @@ const activeJoinRequests = new Map(); // In-memory cache for join requests
 const { v4: uuidv4 } = require("uuid"); // For generating unique IDs
 const session = require("express-session");
 
-// app.use(cors());
+app.use(cors());
 
-app.use(
-    cors({
-        origin: "http://localhost:5173",
-        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-        allowedHeaders: ["Content-Type", "Authorization"],
-        credentials: true,
-    })
-);
+
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(passport.initialize());
@@ -295,9 +288,7 @@ app.get("/api/online-users", async (req, res) => {
     try {
         // Find users whose last activity is within the last 10 minutes
         const threshold = new Date(Date.now() - 60 * 60 * 1000); // 10 minutes ago
-        const onlineUsers = await User.find({
-            lastActivity: { $gt: threshold },
-        });
+        const onlineUsers = await User.find({lastActivity: { $gt: threshold }});
         if (onlineUsers.length > 0) {
             res.status(200).json(onlineUsers);
         } else {
@@ -429,7 +420,7 @@ const activeTimers = new Map(); // Store active timers per room
 // console.log(data);
 io.on("connection", async (socket) => {
   // let messages=[]
-  console.log(`Socket (a user) connected: ${socket.id}`);
+  console.log(`A user socket connected: ${socket.id}`);
   socket.on("joinRoom", async (body) => {
     try {
       const {
@@ -1529,7 +1520,7 @@ const reconnect =async(room_Id,socket_id) => {
       { $match: { challengeId: challengeId } },
     ]);
     // console.log(challegeRoom, "lalalalal");
-    if (challegeRoom) {
+    if (challegeRoom && challegeRoom.length > 0) {
       let challengeId = challegeRoom[0]._id;
       await Challenge.deleteOne({ _id: challengeId });
     }
@@ -2245,9 +2236,7 @@ app.get("/api/flag/:countryName", async (req, res) => {
         // console.log(response.data[0].flags.svg, "vvvv");
         if (response.data && response.data.length > 0) {
             const countryData = response.data[0].flags.svg;
-            res.send(
-                `<img src="${countryData}" alt="Flag of ${countryName}" />`
-            ); // Returns the URL of the SVG flag
+            res.send(`<img src="${countryData}" alt="Flag of ${countryName}" />`); // Returns the URL of the SVG flag
         } else {
             throw new Error("Country not found");
         }
@@ -2293,19 +2282,19 @@ app.get("/api/lookup", async (req, res) => {
                     from: "tournamentdatas",
                     localField: "_id",
                     foreignField: "tournamentId",
-                    as: "tournamentData",
-                },
-            },
-        ]);
+                    as: "tournamentData"
+                }
+            }
+        ])
         res.status(200).json({
             success: true,
-            data: data,
-        });
+            data: data
+        })
     } catch (error) {
         console.error("Error in lookup method:", error);
         res.status(500).json({ message: "Server error", error });
     }
-});
+})
 
 
 
@@ -2323,9 +2312,4 @@ mongoose
     console.error("DB connection error:", err);
   });
 
-  // your connection code...
-mongoose.set('debug', true); // logs every query
-
-mongoose.connection.once('open', () => {
-  console.log(" Connected to MongoDB DB:", mongoose.connection.name); // should print 'backendDb'
-});
+ 
